@@ -1,0 +1,7 @@
+Customer (customerId varchar(30), customerName varchar(30), residence varchar(20), street varchar(20), city varchar(20), state varchar(20), contact varchar(11));
+
+Account (accountNumber varchar(30), customerId varchar(30), pin int(4), savingBalance float, currentBalance float);
+
+Transaction(transcationIdvarchar(30), accountNumber varchar(30), transactionDateTime datetime, transactionType varchar(10),accountType varchar(10), receiver varchar(30), transactionAmount float, sender varchar(30));
+
+OrderChequeBook(accountNumber varchar(30), orderDateTime datetime);
