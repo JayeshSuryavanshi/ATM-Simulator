@@ -50,6 +50,7 @@ public class CheckBalance extends JFrame implements ActionListener{
 		f.add(currentAmount);
 		f.add(savingLable);
 		f.add(savingAmount);
+		f.add(savingAmount);
 		f.add(back);
 		
 		back.addActionListener(this);
