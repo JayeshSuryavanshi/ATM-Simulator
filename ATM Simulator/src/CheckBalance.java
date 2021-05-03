@@ -15,7 +15,7 @@ public class CheckBalance extends JFrame implements ActionListener{
 		this.accountNumber = accountNumber;
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ATM", "root", "manager");			
 		}
 		catch(Exception e){
