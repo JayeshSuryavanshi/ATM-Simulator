@@ -15,7 +15,7 @@ public class CheckBalance extends JFrame implements ActionListener{
 		this.accountNumber = accountNumber;
 		
 		try{
-			Class.forName("com.mysql.jdbc"); //jdbc.Driver
+			Class.forName("com.mysql.jdbc.Driver"); 
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ATM", "root", "manager");			
 		}
 		catch(Exception e){
@@ -50,7 +50,6 @@ public class CheckBalance extends JFrame implements ActionListener{
 		f.add(currentAmount);
 		f.add(savingLable);
 		f.add(savingAmount);
-		f.add(savingAmount);
 		f.add(back);
 		
 		back.addActionListener(this);
@@ -62,7 +61,7 @@ public class CheckBalance extends JFrame implements ActionListener{
 	public void showBalance(String accNumber){
 		ResultSet rs;
 		try {
-			PreparedStatement st =  con.prepareStatement//con.prepareStatement("select savingBalance, currentBalance from Account where accountNumber = ?");
+			PreparedStatement st =con.prepareStatement("select savingBalance, currentBalance from Account where accountNumber = ?");
 			st.setString(1, accNumber);
 			
 			rs = st.executeQuery();
@@ -80,6 +79,5 @@ public class CheckBalance extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent a){
 		f.setVisible(false);
 		new Menu(accountNumber);	
-		new Menu(account);
 	}
 }
